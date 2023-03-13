@@ -59,10 +59,10 @@ export default async function handler(
 
   const scheduling = await prisma.scheduling.create({
     data: {
-      date: schedulingDate.toDate(),
       name,
       email,
       observations,
+      date: schedulingDate.toDate(),
       user_id: user.id,
     },
   })
