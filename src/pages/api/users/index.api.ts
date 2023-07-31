@@ -13,13 +13,13 @@ export default async function handler(
 
   const { name, username } = req.body
 
-  const useExists = await prisma.user.findUnique({
+  const userExists = await prisma.user.findUnique({
     where: {
       username,
     },
   })
 
-  if (useExists) {
+  if (userExists) {
     return res.status(400).json({
       message: 'Username already taken',
     })
